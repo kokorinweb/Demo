@@ -64,7 +64,7 @@ export function Header() {
             href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden cursor-pointer items-center gap-2 rounded-full bg-walnut px-5 py-2.5 text-[14px] font-semibold text-sand warm-transition hover:bg-walnut-deep sm:inline-flex"
+            className="hidden cursor-pointer items-center gap-2 press active:scale-[0.97] rounded-full bg-walnut px-5 py-2.5 text-[14px] font-semibold text-sand warm-transition hover:bg-walnut-deep sm:inline-flex"
           >
             <Icon name="whatsapp" className="h-[18px] w-[18px]" />
             Написать

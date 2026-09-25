@@ -38,21 +38,21 @@ export function Services() {
               delay={index * 60}
               className="h-full"
             >
-              <article className="card-soft flex h-full flex-col overflow-hidden">
-                <div className="relative aspect-[5/4] w-full bg-sand-deep">
+              <article className="group card-soft card-lift hover:card-lift-hover flex h-full flex-col overflow-hidden">
+                <div className="relative aspect-[5/4] w-full overflow-hidden bg-sand-deep">
                   <Image
                     src={asset(service.art)}
                     alt=""
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    className="object-contain p-4 sm:p-6"
+                    className="card-art object-contain p-4 sm:p-6"
                   />
                 </div>
 
                 <div className="flex flex-1 flex-col p-6 sm:p-7">
                   <div className="flex items-center gap-2.5">
-                    <Icon name={service.icon} className="h-5 w-5 text-walnut" />
-                    <h3 className="font-display text-[20px] font-bold leading-snug">
+                    <Icon name={service.icon} className="h-5 w-5 shrink-0 text-walnut" />
+                    <h3 className="font-display text-[20px] font-bold leading-snug warm-transition group-hover:text-walnut">
                       {service.title}
                     </h3>
                   </div>

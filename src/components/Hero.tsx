@@ -14,7 +14,7 @@ export function Hero() {
     <section id="top" className="glow-sand">
       <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 pb-14 pt-28 sm:px-6 sm:pb-20 sm:pt-32 lg:grid-cols-[1.05fr_0.95fr] lg:gap-8 lg:pb-24 lg:pt-36">
         <div>
-          <p className="inline-flex items-center rounded-full bg-surface px-5 py-2.5 text-[12.5px] font-bold uppercase tracking-[0.12em] text-walnut">
+          <p className="inline-flex items-center press active:scale-[0.97] rounded-full bg-surface px-5 py-2.5 text-[12.5px] font-bold uppercase tracking-[0.12em] text-walnut">
             {COMPANY.city} и ближайшие районы
           </p>
 
@@ -34,14 +34,14 @@ export function Hero() {
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex cursor-pointer items-center justify-center gap-3 whitespace-nowrap rounded-full bg-walnut px-7 py-4 text-[15.5px] font-semibold text-sand warm-transition hover:bg-walnut-deep"
+              className="inline-flex cursor-pointer items-center justify-center gap-3 whitespace-nowrap press active:scale-[0.97] rounded-full bg-walnut px-7 py-4 text-[15.5px] font-semibold text-sand warm-transition hover:bg-walnut-deep"
             >
               <Icon name="whatsapp" className="h-5 w-5" />
               Обсудить ремонт в WhatsApp
             </a>
             <a
               href={TEL_URL}
-              className="inline-flex cursor-pointer items-center justify-center gap-3 whitespace-nowrap rounded-full bg-surface px-7 py-4 text-[15.5px] font-semibold warm-transition hover:text-walnut"
+              className="inline-flex cursor-pointer items-center justify-center gap-3 whitespace-nowrap press active:scale-[0.97] rounded-full bg-surface px-7 py-4 text-[15.5px] font-semibold warm-transition hover:text-walnut"
             >
               <Icon name="phone" className="h-5 w-5 text-walnut" />
               {COMPANY.phone}

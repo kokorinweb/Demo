@@ -21,7 +21,7 @@ export function Prices() {
       <div className="mt-11 grid gap-4 lg:grid-cols-3">
         {PRICES.map((item, index) => (
           <Reveal key={item.title} delay={index * 70} className="h-full">
-            <article className="card-soft flex h-full flex-col p-7">
+            <article className="group card-soft card-lift hover:card-lift-hover flex h-full flex-col p-7">
               <h3 className="font-display text-[20px] font-bold leading-snug">{item.title}</h3>
               <p className="mt-3 text-[15px] leading-relaxed text-ink-soft">{item.note}</p>
               <p className="mt-auto pt-7 font-display text-[32px] font-bold leading-none text-walnut">
@@ -53,8 +53,8 @@ export function Prices() {
       <ol className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {STAGES.map((stage, index) => (
           <Reveal as="li" key={stage.title} delay={index * 50} className="h-full">
-            <div className="card-soft flex h-full gap-4 p-6">
-              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-sand-deep font-display text-[17px] font-bold text-walnut">
+            <div className="group card-soft card-lift hover:card-lift-hover flex h-full gap-4 p-6">
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-sand-deep font-display text-[17px] font-bold text-walnut warm-transition group-hover:bg-walnut group-hover:text-sand">
                 {index + 1}
               </span>
               <div>

@@ -48,7 +48,7 @@ export function Contacts() {
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex cursor-pointer items-center justify-center gap-2.5 rounded-full bg-brass px-7 py-4 text-[15.5px] font-semibold text-night warm-transition hover:bg-sand"
+              className="inline-flex cursor-pointer items-center justify-center gap-2.5 press active:scale-[0.97] rounded-full bg-brass px-7 py-4 text-[15.5px] font-semibold text-night warm-transition hover:bg-sand"
             >
               <Icon name="whatsapp" className="h-5 w-5" />
               Написать в WhatsApp

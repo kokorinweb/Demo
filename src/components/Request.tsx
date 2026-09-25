@@ -288,7 +288,7 @@ function Assistant() {
               href={whatsappLink(draft)}
               target="_blank"
               rel="noopener noreferrer"
-              className="rise mt-2 inline-flex cursor-pointer items-center gap-2.5 rounded-full bg-walnut px-6 py-3.5 text-[15px] font-semibold text-sand warm-transition hover:bg-walnut-deep"
+              className="rise mt-2 inline-flex cursor-pointer items-center gap-2.5 press active:scale-[0.97] rounded-full bg-walnut px-6 py-3.5 text-[15px] font-semibold text-sand warm-transition hover:bg-walnut-deep"
             >
               <Icon name="whatsapp" className="h-[18px] w-[18px]" />
               Отправить заявку в WhatsApp
@@ -316,7 +316,7 @@ function Assistant() {
             type="submit"
             aria-label="Отправить"
             disabled={pending || !input.trim()}
-            className="flex cursor-pointer items-center rounded-full bg-walnut px-5 py-3 text-sand warm-transition hover:bg-walnut-deep disabled:cursor-not-allowed disabled:opacity-40"
+            className="flex cursor-pointer items-center press active:scale-[0.97] rounded-full bg-walnut px-5 py-3 text-sand warm-transition hover:bg-walnut-deep disabled:cursor-not-allowed disabled:opacity-40"
           >
             <Icon name="arrow" className="h-[18px] w-[18px]" />
           </button>
@@ -458,7 +458,7 @@ function PlainForm() {
 
       <button
         type="submit"
-        className="flex cursor-pointer items-center justify-center gap-2.5 rounded-full bg-walnut px-7 py-4 text-[16px] font-semibold text-sand warm-transition hover:bg-walnut-deep sm:col-span-2"
+        className="flex cursor-pointer items-center justify-center gap-2.5 press active:scale-[0.97] rounded-full bg-walnut px-7 py-4 text-[16px] font-semibold text-sand warm-transition hover:bg-walnut-deep sm:col-span-2"
       >
         <Icon name="whatsapp" className="h-5 w-5" />
         Отправить в WhatsApp

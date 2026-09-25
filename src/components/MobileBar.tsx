@@ -27,14 +27,14 @@ export function MobileBar() {
           href={WHATSAPP_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex flex-[1.25] cursor-pointer items-center justify-center gap-2 rounded-full bg-walnut px-4 py-3.5 text-[15px] font-semibold text-sand"
+          className="flex flex-[1.25] cursor-pointer items-center justify-center gap-2 press active:scale-[0.97] rounded-full bg-walnut px-4 py-3.5 text-[15px] font-semibold text-sand"
         >
           <Icon name="whatsapp" className="h-[18px] w-[18px]" />
           WhatsApp
         </a>
         <a
           href={TEL_URL}
-          className="flex flex-1 cursor-pointer items-center justify-center gap-2 rounded-full bg-surface px-4 py-3.5 text-[15px] font-semibold"
+          className="flex flex-1 cursor-pointer items-center justify-center gap-2 press active:scale-[0.97] rounded-full bg-surface px-4 py-3.5 text-[15px] font-semibold"
         >
           <Icon name="phone" className="h-[18px] w-[18px] text-walnut" />
           Позвонить

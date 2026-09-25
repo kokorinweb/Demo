@@ -39,7 +39,7 @@ export function Reviews() {
           <ul className="grid gap-4">
             {REVIEWS.map((review, index) => (
               <Reveal as="li" key={review.topic} delay={index * 70}>
-                <blockquote className="card-soft p-7">
+                <blockquote className="card-soft card-lift hover:card-lift-hover p-7">
                   <p className="text-[12.5px] font-bold uppercase tracking-[0.14em] text-walnut">
                     {review.topic}
                   </p>
