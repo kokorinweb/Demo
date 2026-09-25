@@ -58,7 +58,8 @@ export function Hero() {
           </ul>
         </div>
 
-        <div className="relative aspect-[4/3] w-full">
+        {/* На телефоне иллюстрация только отодвигает кнопки вниз — прячем её. */}
+        <div className="relative hidden aspect-[4/3] w-full lg:block">
           <Image
             src={asset("/works/bath-mirror.svg")}
             alt="Ванная после ремонта: зеркало с подсветкой и тумба"
