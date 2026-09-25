@@ -1,49 +1,43 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1500" width="1200" height="1500" role="img">
-<defs><linearGradient id="v" x1="0" y1="0" x2="0" y2="1"><stop offset="0.55" stop-color="#1b2023" stop-opacity="0"/><stop offset="1" stop-color="#1b2023" stop-opacity="0.62"/></linearGradient><radialGradient id="r"><stop offset="0.5" stop-color="#cb9d50" stop-opacity="0.55"/><stop offset="1" stop-color="#cb9d50" stop-opacity="0"/></radialGradient></defs>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1440" width="1200" height="1440" role="img">
 
-<rect width="1200" height="1500" fill="#dcd8d1"/>
-<g stroke="#a8a49b" stroke-width="2" opacity="0.55">
-<line x1="0" y1="0" x2="0" y2="1500"/>
-<line x1="150" y1="0" x2="150" y2="1500"/>
-<line x1="300" y1="0" x2="300" y2="1500"/>
-<line x1="450" y1="0" x2="450" y2="1500"/>
-<line x1="600" y1="0" x2="600" y2="1500"/>
-<line x1="750" y1="0" x2="750" y2="1500"/>
-<line x1="900" y1="0" x2="900" y2="1500"/>
-<line x1="1050" y1="0" x2="1050" y2="1500"/>
-<line x1="1200" y1="0" x2="1200" y2="1500"/>
+<rect width="1200" height="1440" fill="#eff6ff"/>
+<g stroke="#bfdbfe" stroke-width="3" opacity="1">
+<line x1="0" y1="0" x2="0" y2="980"/>
+<line x1="140" y1="0" x2="140" y2="980"/>
+<line x1="280" y1="0" x2="280" y2="980"/>
+<line x1="420" y1="0" x2="420" y2="980"/>
+<line x1="560" y1="0" x2="560" y2="980"/>
+<line x1="700" y1="0" x2="700" y2="980"/>
+<line x1="840" y1="0" x2="840" y2="980"/>
+<line x1="980" y1="0" x2="980" y2="980"/>
+<line x1="1120" y1="0" x2="1120" y2="980"/>
 <line x1="0" y1="0" x2="1200" y2="0"/>
-<line x1="0" y1="150" x2="1200" y2="150"/>
-<line x1="0" y1="300" x2="1200" y2="300"/>
-<line x1="0" y1="450" x2="1200" y2="450"/>
-<line x1="0" y1="600" x2="1200" y2="600"/>
-<line x1="0" y1="750" x2="1200" y2="750"/>
-<line x1="0" y1="900" x2="1200" y2="900"/>
-<line x1="0" y1="1050" x2="1200" y2="1050"/>
-<line x1="0" y1="1200" x2="1200" y2="1200"/>
-<line x1="0" y1="1350" x2="1200" y2="1350"/>
-<line x1="0" y1="1500" x2="1200" y2="1500"/>
+<line x1="0" y1="140" x2="1200" y2="140"/>
+<line x1="0" y1="280" x2="1200" y2="280"/>
+<line x1="0" y1="420" x2="1200" y2="420"/>
+<line x1="0" y1="560" x2="1200" y2="560"/>
+<line x1="0" y1="700" x2="1200" y2="700"/>
+<line x1="0" y1="840" x2="1200" y2="840"/>
+<line x1="0" y1="980" x2="1200" y2="980"/>
 </g>
-<rect x="120" y="120" width="960" height="900" fill="#e7e5e0" opacity="0.55"/>
-<circle cx="600" cy="560" r="400" fill="url(#r)"/>
-<rect x="390" y="240" width="420" height="640" rx="210" fill="#2b3336" stroke="#a9803f" stroke-width="10"/>
-<rect x="450" y="300" width="300" height="520" rx="150" fill="#3a4448" opacity="0.5"/>
-<rect x="300" y="1000" width="600" height="190" rx="6" fill="#1b2023"/>
-<rect x="300" y="1000" width="600" height="14" fill="#a9803f"/>
-<rect x="530" y="1060" width="140" height="18" rx="9" fill="#e7e5e0" opacity="0.35"/>
-<rect x="585" y="900" width="30" height="100" rx="8" fill="#a9803f"/>
-<rect x="0" y="1190" width="1200" height="310" fill="#a8a49b" opacity="0.65"/>
-<g stroke="#e7e5e0" stroke-width="2" opacity="0.7">
-<line x1="0" y1="1190" x2="0" y2="1500"/>
-<line x1="200" y1="1190" x2="200" y2="1500"/>
-<line x1="400" y1="1190" x2="400" y2="1500"/>
-<line x1="600" y1="1190" x2="600" y2="1500"/>
-<line x1="800" y1="1190" x2="800" y2="1500"/>
-<line x1="1000" y1="1190" x2="1000" y2="1500"/>
-<line x1="1200" y1="1190" x2="1200" y2="1500"/>
-<line x1="0" y1="1190" x2="1200" y2="1190"/>
-<line x1="0" y1="1390" x2="1200" y2="1390"/>
+<rect x="420" y="220" width="360" height="560" rx="180" fill="#1e3a8a"/>
+<rect x="470" y="270" width="260" height="460" rx="130" fill="#3b82f6"/>
+<rect x="390" y="190" width="420" height="620" rx="210" fill="none" stroke="#ea580c" stroke-width="14"/>
+<rect x="300" y="900" width="600" height="180" fill="#1e40af"/>
+<rect x="540" y="960" width="120" height="20" fill="#ffffff"/>
+<rect x="588" y="800" width="24" height="100" fill="#ea580c"/>
+<rect x="0" y="1080" width="1200" height="360" fill="#e9eef6"/>
+<g stroke="#bfdbfe" stroke-width="3" opacity="1">
+<line x1="0" y1="1080" x2="0" y2="1440"/>
+<line x1="180" y1="1080" x2="180" y2="1440"/>
+<line x1="360" y1="1080" x2="360" y2="1440"/>
+<line x1="540" y1="1080" x2="540" y2="1440"/>
+<line x1="720" y1="1080" x2="720" y2="1440"/>
+<line x1="900" y1="1080" x2="900" y2="1440"/>
+<line x1="1080" y1="1080" x2="1080" y2="1440"/>
+<line x1="0" y1="1080" x2="1200" y2="1080"/>
+<line x1="0" y1="1260" x2="1200" y2="1260"/>
+<line x1="0" y1="1440" x2="1200" y2="1440"/>
 </g>
 
-<rect width="1200" height="1500" fill="url(#v)"/>
 </svg>

@@ -1,7 +1,8 @@
-import type { ReactNode } from "react";
+import type { IconName } from "@/components/Icon";
 
 export type Service = {
   id: string;
+  icon: IconName;
   title: string;
   lead: string;
   /** Что входит: короткие пункты, без маркетинга. */
@@ -18,6 +19,7 @@ export type Service = {
 export const SERVICES: Service[] = [
   {
     id: "flats",
+    icon: "home",
     title: "Ремонт квартир под ключ",
     lead: "Полный цикл: от черновой отделки до финального покрытия стен и пола.",
     includes: [
@@ -30,6 +32,7 @@ export const SERVICES: Service[] = [
   },
   {
     id: "bathroom",
+    icon: "droplet",
     title: "Ванная и санузел",
     lead: "Самый частый заказ: полная переделка мокрой зоны с гидроизоляцией.",
     includes: [
@@ -42,6 +45,7 @@ export const SERVICES: Service[] = [
   },
   {
     id: "houses",
+    icon: "building",
     title: "Отделка домов",
     lead: "Отделка и строительство домов, а также ремонт коммерческих помещений.",
     includes: [
@@ -53,6 +57,7 @@ export const SERVICES: Service[] = [
   },
   {
     id: "ceilings",
+    icon: "ceiling",
     title: "Потолки",
     lead: "Ровный потолок с подсветкой или простой натяжной — по бюджету.",
     includes: [
@@ -64,6 +69,7 @@ export const SERVICES: Service[] = [
   },
   {
     id: "tiling",
+    icon: "tile",
     title: "Плиточные работы",
     lead: "Плитка и керамогранит на пол и стены, включая крупный формат.",
     includes: [
@@ -75,6 +81,7 @@ export const SERVICES: Service[] = [
   },
   {
     id: "utilities",
+    icon: "bolt",
     title: "Электрика и сантехника",
     lead: "Инженерные работы отдельно от отделки, если нужен только этот этап.",
     includes: [
@@ -173,5 +180,3 @@ export const WORKS: Work[] = [
   { src: "/works/ceiling-wiring.svg", alt: "Потолок на этапе электромонтажа", caption: "Потолки и электрика" },
   { src: "/works/exterior.svg", alt: "Вид объекта снаружи", caption: "Объект снаружи" },
 ];
-
-export type Icon = ReactNode;

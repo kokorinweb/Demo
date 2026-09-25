@@ -1,19 +1,19 @@
 import type { Metadata, Viewport } from "next";
-import { Golos_Text, Unbounded } from "next/font/google";
+import { Inter, Playfair_Display } from "next/font/google";
 import { COMPANY } from "@/lib/company";
 import "./globals.css";
 
-const golos = Golos_Text({
+const inter = Inter({
   subsets: ["cyrillic", "latin"],
-  weight: ["400", "500", "600"],
-  variable: "--font-golos",
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-inter",
   display: "swap",
 });
 
-const unbounded = Unbounded({
+const playfair = Playfair_Display({
   subsets: ["cyrillic", "latin"],
-  weight: ["400", "500", "600"],
-  variable: "--font-unbounded",
+  weight: ["500", "600", "700"],
+  variable: "--font-playfair",
   display: "swap",
 });
 
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#1b2023",
+  themeColor: "#1e40af",
 };
 
 /** Разметка для карт и поиска: адрес, часы и рейтинг ровно из карточки. */
@@ -72,8 +72,8 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="ru" className={`${golos.variable} ${unbounded.variable}`}>
-      <body className="plaster-grain antialiased">
+    <html lang="ru" className={`${inter.variable} ${playfair.variable}`}>
+      <body className="antialiased">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

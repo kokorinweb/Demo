@@ -1,38 +1,30 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900" role="img">
-<defs><linearGradient id="v" x1="0" y1="0" x2="0" y2="1"><stop offset="0.55" stop-color="#1b2023" stop-opacity="0"/><stop offset="1" stop-color="#1b2023" stop-opacity="0.62"/></linearGradient></defs>
 
-<rect width="1200" height="900" fill="#c6c1b8"/>
-<g stroke="#e7e5e0" stroke-width="2" opacity="0.8">
+<rect width="1200" height="900" fill="#e9eef6"/>
+<g stroke="#bfdbfe" stroke-width="4" opacity="1">
 <line x1="0" y1="0" x2="0" y2="900"/>
-<line x1="120" y1="0" x2="120" y2="900"/>
-<line x1="240" y1="0" x2="240" y2="900"/>
-<line x1="360" y1="0" x2="360" y2="900"/>
-<line x1="480" y1="0" x2="480" y2="900"/>
-<line x1="600" y1="0" x2="600" y2="900"/>
-<line x1="720" y1="0" x2="720" y2="900"/>
+<line x1="140" y1="0" x2="140" y2="900"/>
+<line x1="280" y1="0" x2="280" y2="900"/>
+<line x1="420" y1="0" x2="420" y2="900"/>
+<line x1="560" y1="0" x2="560" y2="900"/>
+<line x1="700" y1="0" x2="700" y2="900"/>
 <line x1="840" y1="0" x2="840" y2="900"/>
-<line x1="960" y1="0" x2="960" y2="900"/>
-<line x1="1080" y1="0" x2="1080" y2="900"/>
-<line x1="1200" y1="0" x2="1200" y2="900"/>
+<line x1="980" y1="0" x2="980" y2="900"/>
+<line x1="1120" y1="0" x2="1120" y2="900"/>
 <line x1="0" y1="0" x2="1200" y2="0"/>
-<line x1="0" y1="120" x2="1200" y2="120"/>
-<line x1="0" y1="240" x2="1200" y2="240"/>
-<line x1="0" y1="360" x2="1200" y2="360"/>
-<line x1="0" y1="480" x2="1200" y2="480"/>
-<line x1="0" y1="600" x2="1200" y2="600"/>
-<line x1="0" y1="720" x2="1200" y2="720"/>
+<line x1="0" y1="140" x2="1200" y2="140"/>
+<line x1="0" y1="280" x2="1200" y2="280"/>
+<line x1="0" y1="420" x2="1200" y2="420"/>
+<line x1="0" y1="560" x2="1200" y2="560"/>
+<line x1="0" y1="700" x2="1200" y2="700"/>
 <line x1="0" y1="840" x2="1200" y2="840"/>
 </g>
-<rect x="250" y="70" width="700" height="740" fill="#e7e5e0" opacity="0.4"/>
-<rect x="250" y="70" width="700" height="740" fill="none" stroke="#a9803f" stroke-width="10"/>
-<line x1="600" y1="70" x2="600" y2="810" stroke="#a9803f" stroke-width="7"/>
-<line x1="325" y1="70" x2="325" y2="810" stroke="#e7e5e0" stroke-width="4" opacity="0.6"/>
-<line x1="875" y1="70" x2="875" y2="810" stroke="#e7e5e0" stroke-width="4" opacity="0.6"/>
-<circle cx="760" cy="430" r="18" fill="#a9803f"/>
-<rect x="420" y="140" width="130" height="30" rx="15" fill="#a9803f"/>
-<line x1="485" y1="170" x2="485" y2="340" stroke="#a9803f" stroke-width="8" opacity="0.7"/>
-<rect x="250" y="770" width="700" height="40" fill="#2b3336"/>
-<rect x="0" y="810" width="1200" height="90" fill="#a8a49b" opacity="0.8"/>
+<rect x="250" y="70" width="700" height="740" fill="#ffffff" opacity="0.65"/>
+<rect x="250" y="70" width="700" height="740" fill="none" stroke="#1e40af" stroke-width="14"/>
+<line x1="600" y1="70" x2="600" y2="810" stroke="#1e40af" stroke-width="10"/>
+<circle cx="762" cy="430" r="20" fill="#ea580c"/>
+<rect x="420" y="140" width="140" height="34" fill="#ea580c"/>
+<line x1="490" y1="174" x2="490" y2="350" stroke="#ea580c" stroke-width="10"/>
+<rect x="250" y="770" width="700" height="40" fill="#1e3a8a"/>
 
-<rect width="1200" height="900" fill="url(#v)"/>
 </svg>

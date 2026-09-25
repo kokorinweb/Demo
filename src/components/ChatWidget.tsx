@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { Icon } from "./Icon";
 import { COMPANY, WHATSAPP_URL } from "@/lib/company";
 import { PREFILL_EVENT, type PrefillDetail } from "./RequestForm";
 
@@ -151,9 +152,9 @@ export function ChatWidget() {
         onClick={() => setOpen((value) => !value)}
         aria-expanded={open}
         aria-controls="chat-panel"
-        className="sheen fixed bottom-24 right-4 z-50 flex items-center gap-2.5 rounded-tile bg-concrete px-5 py-3.5 text-[14px] font-medium text-plaster shadow-[0_14px_40px_-14px_rgba(22,25,27,0.8)] transition-all duration-300 hover:bg-brass lg:bottom-6 lg:right-6"
+        className="fixed bottom-24 right-4 z-50 flex cursor-pointer items-center gap-2.5 bg-primary px-5 py-3.5 text-[14px] font-bold text-on-primary flat-transition hover:bg-accent hover:text-on-accent lg:bottom-6 lg:right-6"
       >
-        <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-brass-bright" />
+        <Icon name="message" className="h-[18px] w-[18px]" />
         {open ? "Закрыть" : "Спросить мастера"}
       </button>
 
@@ -162,18 +163,18 @@ export function ChatWidget() {
           id="chat-panel"
           role="dialog"
           aria-label="Консультант по ремонту"
-          className="rise fixed bottom-40 right-4 z-50 flex max-h-[min(560px,calc(100dvh-12rem))] w-[min(400px,calc(100vw-2rem))] flex-col overflow-hidden rounded-tile border bg-plaster shadow-[0_30px_80px_-30px_rgba(22,25,27,0.75)] seam lg:bottom-24 lg:right-6"
+          className="rise fixed bottom-40 right-4 z-50 flex max-h-[min(560px,calc(100dvh-12rem))] w-[min(400px,calc(100vw-2rem))] flex-col overflow-hidden border border-border bg-card lg:bottom-24 lg:right-6"
         >
-          <div className="flex items-center justify-between gap-3 border-b bg-concrete px-4 py-3.5 text-plaster seam-dark">
+          <div className="flex items-center justify-between gap-3 bg-primary px-4 py-3.5 text-on-primary">
             <div>
-              <p className="font-display text-[14px] font-medium">Марк · консультант</p>
-              <p className="text-[12px] text-plaster/55">Отвечает по услугам и ценам</p>
+              <p className="text-[14px] font-bold">Марк, консультант</p>
+              <p className="text-[12px] text-on-primary/70">Отвечает по услугам и ценам</p>
             </div>
             <button
               type="button"
               onClick={() => setOpen(false)}
               aria-label="Закрыть чат"
-              className="text-plaster/60 transition-colors hover:text-plaster"
+              className="cursor-pointer text-on-primary/70 flat-transition hover:text-on-primary"
             >
               ✕
             </button>
@@ -183,10 +184,10 @@ export function ChatWidget() {
             {messages.map((message, index) => (
               <div
                 key={index}
-                className={`max-w-[86%] whitespace-pre-wrap rounded-tile px-3.5 py-2.5 text-[14px] leading-relaxed ${
+                className={`max-w-[86%] whitespace-pre-wrap px-3.5 py-2.5 text-[14px] leading-relaxed ${
                   message.role === "user"
-                    ? "ml-auto bg-concrete text-plaster"
-                    : "border bg-plaster-deep/60 seam"
+                    ? "ml-auto bg-primary text-on-primary"
+                    : "border border-border bg-muted"
                 }`}
               >
                 {message.content}
@@ -194,7 +195,7 @@ export function ChatWidget() {
             ))}
 
             {pending && messages.at(-1)?.role === "user" && (
-              <div className="w-16 rounded-tile border bg-plaster-deep/60 px-3.5 py-3 seam">
+              <div className="w-16 border border-border bg-muted px-3.5 py-3">
                 <span className="inline-flex gap-1">
                   <Dot delay="0ms" />
                   <Dot delay="150ms" />
@@ -204,7 +205,7 @@ export function ChatWidget() {
             )}
 
             {error && (
-              <div className="rounded-tile border border-brass/50 bg-brass/10 px-3.5 py-2.5 text-[13.5px]">
+              <div className="border-l-4 border-accent bg-muted px-3.5 py-2.5 text-[13.5px]">
                 {error}
               </div>
             )}
@@ -216,7 +217,7 @@ export function ChatWidget() {
                     key={suggestion}
                     type="button"
                     onClick={() => void send(suggestion)}
-                    className="rounded-tile border px-3 py-1.5 text-[12.5px] text-ink-soft transition-colors duration-300 seam hover:border-brass hover:text-brass"
+                    className="cursor-pointer border border-border px-3 py-1.5 text-[12.5px] font-medium text-muted-foreground flat-transition hover:border-primary hover:text-primary"
                   >
                     {suggestion}
                   </button>
@@ -230,7 +231,7 @@ export function ChatWidget() {
               event.preventDefault();
               void send(input);
             }}
-            className="flex gap-2 border-t px-3 py-3 seam"
+            className="flex gap-2 border-t border-border px-3 py-3"
           >
             <input
               ref={inputRef}
@@ -238,21 +239,22 @@ export function ChatWidget() {
               onChange={(event) => setInput(event.target.value)}
               maxLength={500}
               placeholder="Опишите задачу…"
-              className="flex-1 rounded-tile border bg-plaster px-4 py-2.5 text-[14px] outline-none transition-colors seam focus:border-brass"
+              className="flex-1 border border-border bg-card px-4 py-2.5 text-[14px] outline-none flat-transition focus:border-primary"
             />
             <button
               type="submit"
               disabled={pending || !input.trim()}
-              className="rounded-tile bg-brass px-4 py-2.5 text-[14px] font-medium text-plaster transition-opacity disabled:opacity-40"
+              aria-label="Отправить"
+              className="flex cursor-pointer items-center bg-accent px-4 py-2.5 text-on-accent flat-transition hover:bg-accent-hover hover:text-on-primary disabled:cursor-not-allowed disabled:opacity-40"
             >
-              →
+              <Icon name="arrow" className="h-[18px] w-[18px]" />
             </button>
           </form>
 
-          <p className="border-t px-4 py-2.5 text-[11.5px] leading-snug text-ink-soft seam">
+          <p className="border-t border-border px-4 py-2.5 text-[11.5px] leading-snug text-muted-foreground">
             Отвечает ИИ и может ошибаться. Точные сроки и условия —{" "}
             <a
-              className="border-b border-brass/40 text-brass"
+              className="font-semibold text-primary underline"
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
@@ -269,7 +271,7 @@ export function ChatWidget() {
 function Dot({ delay }: { delay: string }) {
   return (
     <span
-      className="inline-block h-1.5 w-1.5 animate-bounce rounded-full bg-ink-soft"
+      className="inline-block h-1.5 w-1.5 animate-bounce rounded-full bg-muted-foreground"
       style={{ animationDelay: delay }}
     />
   );

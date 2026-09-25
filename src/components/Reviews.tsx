@@ -1,46 +1,61 @@
+import { Icon } from "./Icon";
 import { Reveal } from "./Reveal";
 import { REVIEWS } from "@/lib/services";
 import { COMPANY } from "@/lib/company";
 
 export function Reviews() {
   return (
-    <section id="reviews" className="bg-plaster-deep/70 py-20 sm:py-28">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
-          <Reveal>
-            <h2 className="font-display text-[clamp(1.6rem,4vw,2.6rem)] font-medium leading-tight tracking-[-0.02em]">
-              Что пишут клиенты
-            </h2>
-            <div className="mt-6 flex items-baseline gap-3">
-              <span className="font-display text-4xl font-medium tabular-nums">
+    <section id="reviews" className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
+      <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-14">
+        <Reveal>
+          <p className="text-[13px] font-bold uppercase tracking-wider text-accent">
+            Отзывы
+          </p>
+          <h2 className="mt-3 font-display text-[clamp(1.75rem,4vw,2.5rem)] font-bold leading-tight">
+            Что пишут клиенты
+          </h2>
+
+          <div className="mt-6 border border-border bg-card p-6">
+            <div className="flex items-baseline gap-3">
+              <span className="font-display text-[40px] font-bold leading-none text-primary">
                 {String(COMPANY.rating).replace(".", ",")}
               </span>
-              <span className="text-[14px] text-ink-soft">
-                из 5 на Яндекс Картах
-                <span className="block">
-                  {COMPANY.reviewCount} оценок, {COMPANY.textReviewCount} отзывов
-                </span>
-              </span>
+              <span className="text-[15px] font-semibold text-muted-foreground">из 5</span>
             </div>
-          </Reveal>
+            <div className="mt-3 flex gap-1 text-accent" aria-hidden>
+              {[0, 1, 2, 3, 4].map((index) => (
+                <Icon
+                  key={index}
+                  name="star"
+                  className={`h-[18px] w-[18px] ${index === 4 ? "opacity-40" : ""}`}
+                />
+              ))}
+            </div>
+            <p className="mt-3 text-[14px] leading-relaxed text-muted-foreground">
+              На Яндекс Картах: {COMPANY.reviewCount} оценок и {COMPANY.textReviewCount}{" "}
+              текстовых отзывов.
+            </p>
+          </div>
+        </Reveal>
 
-          <ul className="border-t seam">
-            {REVIEWS.map((review, index) => (
-              <Reveal as="li" key={review.topic} delay={index * 80}>
-                <div className="group border-b px-1 py-7 transition-colors duration-500 seam hover:bg-plaster/60 sm:px-4">
-                  <p className="text-[13px] text-brass">{review.topic}</p>
-                  <p className="mt-2.5 max-w-xl text-[15px] leading-relaxed">{review.text}</p>
-                </div>
-              </Reveal>
-            ))}
-            <Reveal as="li" delay={240}>
-              <p className="px-1 pt-5 text-[12.5px] leading-relaxed text-ink-soft sm:px-4">
-                Это краткий пересказ отзывов с Яндекс Карт, а не цитаты. Полные тексты
-                и имена авторов — в карточке компании.
-              </p>
+        <ul className="grid gap-4">
+          {REVIEWS.map((review, index) => (
+            <Reveal as="li" key={review.topic} delay={index * 70}>
+              <blockquote className="border border-border bg-card p-6">
+                <p className="text-[13px] font-bold uppercase tracking-wider text-accent">
+                  {review.topic}
+                </p>
+                <p className="mt-3 text-[16px] leading-relaxed">{review.text}</p>
+              </blockquote>
             </Reveal>
-          </ul>
-        </div>
+          ))}
+          <Reveal as="li" delay={220}>
+            <p className="text-[13px] leading-relaxed text-muted-foreground">
+              Это краткий пересказ отзывов с Яндекс Карт, а не цитаты. Полные тексты
+              и имена авторов — в карточке компании.
+            </p>
+          </Reveal>
+        </ul>
       </div>
     </section>
   );

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { Icon } from "./Icon";
 import { Reveal } from "./Reveal";
 import { SERVICES } from "@/lib/services";
 
@@ -8,81 +9,60 @@ export function Services() {
   const [open, setOpen] = useState<string | null>(null);
 
   return (
-    <section id="services" className="mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-28">
+    <section id="services" className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
       <Reveal className="max-w-2xl">
-        <h2 className="font-display text-[clamp(1.6rem,4vw,2.6rem)] font-medium leading-tight tracking-[-0.02em]">
+        <p className="text-[13px] font-bold uppercase tracking-wider text-accent">
+          Услуги
+        </p>
+        <h2 className="mt-3 font-display text-[clamp(1.75rem,4vw,2.5rem)] font-bold leading-tight">
           Что делаем
         </h2>
-        <p className="mt-4 text-[15px] leading-relaxed text-ink-soft">
+        <p className="mt-4 text-[16px] leading-relaxed text-muted-foreground">
           Берём объект целиком или отдельный этап, если остальное вы уже сделали.
-          Нажмите на услугу, чтобы увидеть состав работ.
         </p>
       </Reveal>
 
-      <div className="mt-12 grid border-l border-t seam sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {SERVICES.map((service, index) => {
           const expanded = open === service.id;
           const hidden = Math.max(0, service.includes.length - 3);
+          const shown = expanded ? service.includes : service.includes.slice(0, 3);
+
           return (
             <Reveal key={service.id} delay={index * 60} className="h-full">
-              <button
-                type="button"
-                onClick={() => setOpen(expanded ? null : service.id)}
-                aria-expanded={expanded}
-                className="brass-edge group flex h-full w-full flex-col border-b border-r px-6 py-8 text-left transition-colors duration-500 seam hover:bg-plaster-deep/60 sm:px-7 sm:py-9"
-              >
-                <span className="font-display text-lg font-medium leading-snug tracking-[-0.01em] transition-colors group-hover:text-brass">
-                  {service.title}
-                </span>
-                <span className="mt-3 text-[14px] leading-relaxed text-ink-soft">
+              <article className="flex h-full flex-col border border-border bg-card p-6">
+                <Icon name={service.icon} className="h-8 w-8 text-primary" />
+                <h3 className="mt-4 text-[18px] font-bold leading-snug">{service.title}</h3>
+                <p className="mt-2.5 text-[14px] leading-relaxed text-muted-foreground">
                   {service.lead}
-                </span>
+                </p>
 
-                {/* Три пункта видно сразу: карточка без них выглядит пустой. */}
-                <span className="mt-5 block border-t pt-4 seam">
-                  {service.includes.slice(0, 3).map((item) => (
-                    <span
-                      key={item}
-                      className="flex gap-2.5 py-1 text-[13.5px] leading-snug text-ink-soft"
-                    >
-                      <span aria-hidden className="mt-[8px] h-px w-3 shrink-0 bg-brass" />
+                <ul className="mt-5 space-y-2 border-t border-border pt-4">
+                  {shown.map((item) => (
+                    <li key={item} className="flex gap-2.5 text-[14px] leading-snug">
+                      <Icon name="check" className="mt-px h-4 w-4 shrink-0 text-accent" />
                       {item}
-                    </span>
+                    </li>
                   ))}
-                </span>
-
-                <span
-                  className={`grid transition-[grid-template-rows,opacity] duration-500 ease-out ${
-                    expanded ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
-                  }`}
-                >
-                  <span className="overflow-hidden">
-                    {service.includes.slice(3).map((item) => (
-                      <span
-                        key={item}
-                        className="flex gap-2.5 py-1 text-[13.5px] leading-snug text-ink-soft"
-                      >
-                        <span aria-hidden className="mt-[8px] h-px w-3 shrink-0 bg-brass" />
-                        {item}
-                      </span>
-                    ))}
-                  </span>
-                </span>
+                </ul>
 
                 {hidden > 0 && (
-                  <span className="mt-auto flex items-center gap-2 pt-6 text-[13px] text-brass">
+                  <button
+                    type="button"
+                    onClick={() => setOpen(expanded ? null : service.id)}
+                    aria-expanded={expanded}
+                    className="mt-auto flex cursor-pointer items-center gap-1.5 pt-5 text-[14px] font-semibold text-primary flat-transition hover:text-accent"
+                  >
                     {expanded ? "Свернуть" : `Ещё ${hidden} ${hidden === 1 ? "пункт" : "пункта"}`}
-                    <span
-                      aria-hidden
-                      className={`inline-block transition-transform duration-300 ${
-                        expanded ? "rotate-180" : "group-hover:translate-y-0.5"
+                    <Icon
+                      name="chevron"
+                      className={`h-4 w-4 transition-transform duration-200 ${
+                        expanded ? "rotate-180" : ""
                       }`}
-                    >
-                      ↓
-                    </span>
-                  </span>
+                    />
+                  </button>
                 )}
-              </button>
+              </article>
             </Reveal>
           );
         })}
