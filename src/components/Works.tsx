@@ -1,60 +1,55 @@
 import Image from "next/image";
+import { asset } from "@/lib/assets";
 import { Reveal } from "./Reveal";
+import { SectionHead } from "./SectionHead";
 import { WORKS } from "@/lib/services";
-import { COMPANY } from "@/lib/company";
 
 export function Works() {
   return (
-    <section id="works" className="border-y border-border bg-card py-16 sm:py-20">
+    <section id="works" className="bg-sand-deep py-16 sm:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <Reveal className="flex flex-wrap items-end justify-between gap-6">
-          <div className="max-w-xl">
-            <p className="text-[13px] font-bold uppercase tracking-wider text-accent">
-              Портфолио
-            </p>
-            <h2 className="mt-3 font-display text-[clamp(1.75rem,4vw,2.5rem)] font-bold leading-tight">
-              Примеры работ
-            </h2>
-            <p className="mt-4 text-[16px] leading-relaxed text-muted-foreground">
-              Спальни с подсветкой, санузлы в плитке, душевые, декоративная отделка
-              стен и электрика.
-            </p>
-          </div>
-          <p className="text-[14px] font-semibold text-muted-foreground">
-            {COMPANY.photoCount} фотографий в карточке
-          </p>
-        </Reveal>
+        <SectionHead
+          eyebrow="Что делаем"
+          title={
+            <>
+              Задачи, с которыми к нам
+              <br />
+              приходят чаще всего
+            </>
+          }
+          lead="Мокрая зона, потолки и электрика — три четверти заказов. Ниже то, что делаем каждую неделю."
+        />
 
-        {/* Телефон: лента с прилипанием. Десктоп: ровная сетка. */}
-        <ul className="snap-row -mx-4 mt-10 flex gap-4 overflow-x-auto px-4 pb-2 sm:mx-0 sm:grid sm:grid-cols-2 sm:overflow-visible sm:px-0 lg:grid-cols-4">
+        <ul className="snap-row -mx-4 mt-11 flex gap-4 overflow-x-auto px-4 pb-2 sm:mx-0 sm:grid sm:grid-cols-2 sm:overflow-visible sm:px-0 lg:grid-cols-3">
           {WORKS.map((work, index) => (
             <Reveal
               as="li"
               key={work.src}
               delay={index * 50}
-              className="group w-[78vw] shrink-0 sm:w-auto"
+              className="w-[80vw] shrink-0 sm:w-auto"
             >
-              <figure className="border border-border">
-                <div className="relative aspect-[4/3] overflow-hidden bg-muted">
+              <figure className="card-soft h-full overflow-hidden">
+                <div className="relative aspect-[4/3] w-full bg-sand">
                   <Image
-                    src={work.src}
+                    src={asset(work.src)}
                     alt={work.alt}
                     fill
-                    sizes="(max-width: 640px) 78vw, (max-width: 1024px) 50vw, 25vw"
-                    className="object-cover"
+                    sizes="(max-width: 640px) 80vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-contain p-4 sm:p-6"
                   />
                 </div>
-                <figcaption className="border-t border-border px-4 py-3 text-[14px] font-semibold flat-transition group-hover:bg-primary group-hover:text-on-primary">
-                  {work.caption}
+                <figcaption className="px-6 py-5">
+                  <p className="text-[16px] font-bold">{work.caption}</p>
+                  <p className="mt-1.5 text-[14px] leading-snug text-ink-soft">{work.note}</p>
                 </figcaption>
               </figure>
             </Reveal>
           ))}
         </ul>
 
-        <p className="mt-6 text-[13px] leading-relaxed text-muted-foreground">
-          В демо-версии на месте фотографий стоят заглушки. Подписи соответствуют
-          реальным снимкам из карточки — заменить файлы можно без правок кода.
+        <p className="mt-7 text-[13.5px] leading-relaxed text-ink-soft">
+          В демо-версии вместо фотографий — иллюстрации. Подписи соответствуют реальным
+          снимкам из карточки компании, файлы заменяются без правок кода.
         </p>
       </div>
     </section>

@@ -1,57 +1,69 @@
 @import "tailwindcss";
 
 /*
-  Токены из ui-ux-pro-max: паттерн Trust & Authority + Conversion,
-  стиль Flat Design. Синий держит доверие, оранжевый — единственный
-  цвет действия. Теней и градиентов в стиле нет, глубину даёт граница.
+  Палитра и типографика повторяют демо «РусМебель»: тёплый песок, орех,
+  латунь, скруглённые карточки и мягкие тени.
 */
 @theme {
-  --color-primary: #1e40af;
-  --color-primary-deep: #1e3a8a;
-  --color-on-primary: #ffffff;
-  --color-secondary: #3b82f6;
-  --color-accent: #ea580c;
-  --color-accent-hover: #c2410c;
-  --color-on-accent: #000000;
-  --color-background: #eff6ff;
-  --color-foreground: #1e3a8a;
-  --color-card: #ffffff;
-  --color-muted: #e9eef6;
-  --color-muted-foreground: #475569;
-  --color-border: #bfdbfe;
-  --color-ring: #1e40af;
+  --color-sand: #f7f3ed;
+  --color-sand-deep: #efe7da;
+  --color-surface: #ffffff;
+  --color-line: #e2d8c9;
+  --color-ink: #1b1613;
+  --color-ink-soft: #6d6055;
+  --color-night: #221b16;
+  --color-walnut: #9c5f33;
+  --color-walnut-deep: #7a4726;
+  --color-brass: #b8892b;
 
   --font-display: var(--font-playfair), Georgia, serif;
-  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
 }
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 5rem;
+  scroll-padding-top: 6rem;
 }
 
 body {
-  background-color: var(--color-background);
-  color: var(--color-foreground);
+  background-color: var(--color-sand);
+  color: var(--color-ink);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
 }
 
-/* Flat Design: переходы короткие и одинаково быстрые, без пружин на цвете. */
-@utility flat-transition {
-  transition-property: color, background-color, border-color, opacity;
-  transition-duration: 180ms;
-  transition-timing-function: ease;
+/* Тёплый свет в углу экрана — фон первого экрана и тёмных секций. */
+.glow-sand {
+  background-image: radial-gradient(
+    120% 90% at 78% 8%,
+    #f3e6d2 0%,
+    rgba(247, 243, 237, 0) 62%
+  );
+}
+.glow-night {
+  background-image: radial-gradient(
+    90% 80% at 85% 0%,
+    rgba(184, 137, 43, 0.22) 0%,
+    rgba(34, 27, 22, 0) 60%
+  );
 }
 
-/*
-  Каскадное появление блоков. Овершут в кривой — из пресета Stagger List
-  (back.out), задержку выставляет компонент Reveal.
-*/
+@utility card-soft {
+  border-radius: 1.5rem;
+  background-color: var(--color-surface);
+  box-shadow: 0 1px 2px rgba(27, 22, 19, 0.04), 0 12px 28px -18px rgba(27, 22, 19, 0.28);
+}
+
+@utility warm-transition {
+  transition-property: color, background-color, border-color, box-shadow, transform, opacity;
+  transition-duration: 220ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .reveal {
   opacity: 0;
-  transform: translateY(16px) scale(0.97);
-  transition: opacity 400ms ease, transform 400ms cubic-bezier(0.34, 1.46, 0.64, 1);
+  transform: translateY(18px);
+  transition: opacity 500ms ease, transform 500ms cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 .reveal.is-visible {
   opacity: 1;
@@ -59,7 +71,7 @@ body {
 }
 
 .rise {
-  animation: rise 220ms cubic-bezier(0.34, 1.46, 0.64, 1);
+  animation: rise 240ms cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 @keyframes rise {
   from {
@@ -68,7 +80,6 @@ body {
   }
 }
 
-/* Лента работ на телефоне. */
 .snap-row {
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
@@ -81,8 +92,8 @@ body {
 }
 
 :where(a, button, summary, input, select, textarea):focus-visible {
-  outline: 3px solid var(--color-ring);
-  outline-offset: 2px;
+  outline: 2px solid var(--color-walnut);
+  outline-offset: 3px;
 }
 
 @media (prefers-reduced-motion: reduce) {

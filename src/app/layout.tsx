@@ -1,18 +1,18 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
+import { Manrope, Playfair_Display } from "next/font/google";
 import { COMPANY } from "@/lib/company";
 import "./globals.css";
 
-const inter = Inter({
+const manrope = Manrope({
   subsets: ["cyrillic", "latin"],
-  weight: ["400", "500", "600", "700", "800"],
-  variable: "--font-inter",
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-manrope",
   display: "swap",
 });
 
 const playfair = Playfair_Display({
   subsets: ["cyrillic", "latin"],
-  weight: ["500", "600", "700"],
+  weight: ["500", "600", "700", "800"],
   variable: "--font-playfair",
   display: "swap",
 });
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#1e40af",
+  themeColor: "#221b16",
 };
 
 /** Разметка для карт и поиска: адрес, часы и рейтинг ровно из карточки. */
@@ -72,7 +72,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="ru" className={`${inter.variable} ${playfair.variable}`}>
+    <html lang="ru" className={`${manrope.variable} ${playfair.variable}`}>
       <body className="antialiased">
         <script
           type="application/ld+json"

@@ -1,15 +1,12 @@
-import { ChatWidget } from "@/components/ChatWidget";
 import { Contacts } from "@/components/Contacts";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { MobileBar } from "@/components/MobileBar";
 import { Prices } from "@/components/Prices";
-import { Proof } from "@/components/Proof";
-import { RequestForm } from "@/components/RequestForm";
+import { Request } from "@/components/Request";
 import { Reviews } from "@/components/Reviews";
 import { Services } from "@/components/Services";
-import { Stages } from "@/components/Stages";
 import { Works } from "@/components/Works";
 
 export default function Home() {
@@ -18,18 +15,15 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
-        <Proof />
         <Services />
         <Works />
         <Prices />
-        <Stages />
         <Reviews />
-        <RequestForm />
+        <Request />
         <Contacts />
       </main>
       <Footer />
       <MobileBar />
-      <ChatWidget />
     </>
   );
 }

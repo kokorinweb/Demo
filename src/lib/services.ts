@@ -3,6 +3,7 @@ import type { IconName } from "@/components/Icon";
 export type Service = {
   id: string;
   icon: IconName;
+  art: string;
   title: string;
   lead: string;
   /** Что входит: короткие пункты, без маркетинга. */
@@ -20,6 +21,7 @@ export const SERVICES: Service[] = [
   {
     id: "flats",
     icon: "home",
+    art: "/works/bedroom-light.svg",
     title: "Ремонт квартир под ключ",
     lead: "Полный цикл: от черновой отделки до финального покрытия стен и пола.",
     includes: [
@@ -33,6 +35,7 @@ export const SERVICES: Service[] = [
   {
     id: "bathroom",
     icon: "droplet",
+    art: "/works/bath-mirror.svg",
     title: "Ванная и санузел",
     lead: "Самый частый заказ: полная переделка мокрой зоны с гидроизоляцией.",
     includes: [
@@ -46,6 +49,7 @@ export const SERVICES: Service[] = [
   {
     id: "houses",
     icon: "building",
+    art: "/works/decor-wall.svg",
     title: "Отделка домов",
     lead: "Отделка и строительство домов, а также ремонт коммерческих помещений.",
     includes: [
@@ -58,6 +62,7 @@ export const SERVICES: Service[] = [
   {
     id: "ceilings",
     icon: "ceiling",
+    art: "/works/ceiling-light.svg",
     title: "Потолки",
     lead: "Ровный потолок с подсветкой или простой натяжной — по бюджету.",
     includes: [
@@ -70,6 +75,7 @@ export const SERVICES: Service[] = [
   {
     id: "tiling",
     icon: "tile",
+    art: "/works/tiled-bath.svg",
     title: "Плиточные работы",
     lead: "Плитка и керамогранит на пол и стены, включая крупный формат.",
     includes: [
@@ -82,6 +88,7 @@ export const SERVICES: Service[] = [
   {
     id: "utilities",
     icon: "bolt",
+    art: "/works/wiring.svg",
     title: "Электрика и сантехника",
     lead: "Инженерные работы отдельно от отделки, если нужен только этот этап.",
     includes: [
@@ -164,6 +171,7 @@ export type Work = {
   src: string;
   alt: string;
   caption: string;
+  note: string;
 };
 
 /**
@@ -171,12 +179,10 @@ export type Work = {
  * заглушки: достаточно положить в public/works снимки с теми же именами.
  */
 export const WORKS: Work[] = [
-  { src: "/works/bedroom-light.svg", alt: "Спальня с подсветкой по периметру потолка", caption: "Спальня, подсветка потолка" },
-  { src: "/works/bath-mirror.svg", alt: "Ванная с подсвеченным зеркалом", caption: "Ванная, зеркало с подсветкой" },
-  { src: "/works/tiled-bath.svg", alt: "Санузел, облицованный плиткой", caption: "Санузел в плитке" },
-  { src: "/works/shower.svg", alt: "Установленная душевая кабина", caption: "Душевая кабина" },
-  { src: "/works/washer.svg", alt: "Ванная со встроенной стиральной машиной", caption: "Ванная со стиральной машиной" },
-  { src: "/works/decor-wall.svg", alt: "Стена с декоративной отделкой", caption: "Декоративная отделка стен" },
-  { src: "/works/ceiling-wiring.svg", alt: "Потолок на этапе электромонтажа", caption: "Потолки и электрика" },
-  { src: "/works/exterior.svg", alt: "Вид объекта снаружи", caption: "Объект снаружи" },
+  { src: "/works/bath-mirror.svg", alt: "Ванная с подсвеченным зеркалом", caption: "Ванная с подсветкой", note: "Зеркало, тумба, точечный свет" },
+  { src: "/works/tiled-bath.svg", alt: "Санузел, облицованный плиткой", caption: "Санузел в плитке", note: "Раскладка под размер комнаты" },
+  { src: "/works/shower.svg", alt: "Установленная душевая кабина", caption: "Душевая кабина", note: "Стекло, поддон, гидроизоляция" },
+  { src: "/works/washer.svg", alt: "Ванная со встроенной стиральной машиной", caption: "Стиральная машина в нише", note: "Подводка и вентиляция" },
+  { src: "/works/ceiling-light.svg", alt: "Потолок с подсветкой по периметру", caption: "Потолок с подсветкой", note: "Короб, лента, светильники" },
+  { src: "/works/wiring.svg", alt: "Электрощит и разводка", caption: "Электрика и щиток", note: "Разводка, розетки, автоматы" },
 ];
