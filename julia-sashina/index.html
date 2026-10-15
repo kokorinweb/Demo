@@ -52,7 +52,7 @@ const QUESTIONS=[
 {title:'Как вам комфортнее заниматься?',answers:['В группе','Индивидуально','В паре со своим партнёром','Пока не определился / не определилась']},
 {title:'На чём хотите сосредоточиться?',answers:['На всех экзаменационных навыках','На Writing / Speaking','На живом общении','На понимании формата и тайминге']}
 ];
-let answers=[],quizStep=0,quizStarted=false;
+let answers=[],quizStep=0,quizStarted=true;
 const quizRoot=document.querySelector('#quiz-content');
 function recommendation(a){
  if(a[0]===2||a[4]===2)return {title:'Присмотритесь к Speech Dating',text:'Если главная цель — больше говорить по-английски, обсудите разговорный клуб на стыке клуба и урока. Актуальные условия участия подскажет Юлия.'};
